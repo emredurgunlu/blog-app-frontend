@@ -36,7 +36,13 @@ export const registerSchema = object({
     .required("bio zorunludur.")
     .min(3, "bio en az 3 karakter içermelidir"),
 });
-const RegisterForm = ({ values, handleChange, errors }) => {
+const RegisterForm = ({
+  values,
+  handleChange,
+  errors,
+  touched,
+  handleBlur,
+}) => {
   return (
     <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
       <Form>
@@ -57,9 +63,12 @@ const RegisterForm = ({ values, handleChange, errors }) => {
               className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               value={values.username}
               onChange={handleChange}
+              onBlur={handleBlur}
             />
           </div>
-          <p className="text-red-600">{errors.username}</p>
+          {touched.username && (
+            <p className="text-red-600">{errors.username}</p>
+          )}
         </div>
         <div>
           <label
@@ -78,9 +87,10 @@ const RegisterForm = ({ values, handleChange, errors }) => {
               className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               value={values.email}
               onChange={handleChange}
+              onBlur={handleBlur}
             />
           </div>
-          <p className="text-red-600">{errors.email}</p>
+          {touched.email && <p className="text-red-600">{errors.email}</p>}
         </div>
         <div>
           <label
@@ -99,9 +109,12 @@ const RegisterForm = ({ values, handleChange, errors }) => {
               className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               value={values.firstName}
               onChange={handleChange}
+              onBlur={handleBlur}
             />
           </div>
-          <p className="text-red-600">{errors.firstName}</p>
+          {touched.firstName && (
+            <p className="text-red-600">{errors.firstName}</p>
+          )}
         </div>
         <div>
           <label
@@ -120,9 +133,12 @@ const RegisterForm = ({ values, handleChange, errors }) => {
               className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               value={values.lastName}
               onChange={handleChange}
+              onBlur={handleBlur}
             />
           </div>
-          <p className="text-red-600">{errors.lastName}</p>
+          {touched.lastName && (
+            <p className="text-red-600">{errors.lastName}</p>
+          )}
         </div>
 
         <div>
@@ -144,9 +160,12 @@ const RegisterForm = ({ values, handleChange, errors }) => {
               className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               value={values.password}
               onChange={handleChange}
+              onBlur={handleBlur}
             />
           </div>
-          <p className="text-red-600">{errors.password}</p>
+          {touched.password && (
+            <p className="text-red-600">{errors.password}</p>
+          )}
         </div>
         <div>
           <label
@@ -165,9 +184,10 @@ const RegisterForm = ({ values, handleChange, errors }) => {
               className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               value={values.image}
               onChange={handleChange}
+              onBlur={handleBlur}
             />
           </div>
-          <p className="text-red-600">{errors.image}</p>
+          {touched.image && <p className="text-red-600">{errors.image}</p>}
         </div>
         <div>
           <label
@@ -186,9 +206,10 @@ const RegisterForm = ({ values, handleChange, errors }) => {
               className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               value={values.city}
               onChange={handleChange}
+              onBlur={handleBlur}
             />
           </div>
-          <p className="text-red-600">{errors.city}</p>
+          {touched.city && <p className="text-red-600">{errors.city}</p>}
         </div>
         <div>
           <label
@@ -207,9 +228,10 @@ const RegisterForm = ({ values, handleChange, errors }) => {
               className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               value={values.bio}
               onChange={handleChange}
+              onBlur={handleBlur}
             />
           </div>
-          <p className="text-red-600">{errors.bio}</p>
+          {touched.bio && <p className="text-red-600">{errors.bio}</p>}
         </div>
 
         <div>
