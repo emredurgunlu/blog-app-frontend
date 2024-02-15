@@ -116,7 +116,7 @@ export default function NavBar() {
                         </Menu.Item>
                         <Menu.Item>
                           {({ active }) => (
-                            <link
+                            <Link
                               to="/"
                               className={classNames(
                                 active ? "bg-gray-100" : "",
@@ -124,7 +124,7 @@ export default function NavBar() {
                               )}
                             >
                               Settings
-                            </link>
+                            </Link>
                           )}
                         </Menu.Item>
                         <Menu.Item>
